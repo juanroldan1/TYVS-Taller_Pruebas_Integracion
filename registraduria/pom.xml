@@ -21,8 +21,8 @@
     <jacoco.skip>true</jacoco.skip>
   </properties>
 
-  <dependencies>
-    <!-- JUnit 4 -->
+    <dependencies>
+    <!-- JUnit 5 -->
     <dependency>
       <groupId>org.junit.vintage</groupId>
       <artifactId>junit-vintage-engine</artifactId>
@@ -30,6 +30,7 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- JUnit 4 -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -51,7 +52,7 @@
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
 
-    <!-- Tests Spring + JUnit 4/5 (por defecto trae 5; puedes seguir usando 4 si prefieres) -->
+    <!-- Tests Spring + JUnit 4/5 -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
