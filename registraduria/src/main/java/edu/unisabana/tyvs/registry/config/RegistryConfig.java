@@ -15,15 +15,14 @@ public class RegistryConfig {
 
     @Bean
     public RegistryRepositoryPort registryRepositoryPort() throws Exception {
-        String jdbc = "jdbc:h2:mem:regdb;DB_CLOSE_DELAY=-1";
-        RegistryRepository repo = new RegistryRepository(jdbc);
+        // Usa una base de datos puramente en memoria sin persistencia extra
+        RegistryRepository repo = new RegistryRepository("jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1");
         repo.initSchema();
         return repo;
     }
 
     @Bean
-    public Registry registry(RegistryRepositoryPort port) {
-        return new Registry(port);
+    public Registry registry(RegistryRepositoryPort repo) {
+        return new Registry(repo);
     }
-
 }

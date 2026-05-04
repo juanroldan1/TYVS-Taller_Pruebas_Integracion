@@ -1,24 +1,15 @@
 package edu.unisabana.tyvs.registry.application.usecase;
 
-import org.springframework.stereotype.Service;
-
 import edu.unisabana.tyvs.registry.application.port.out.RegistryRepositoryPort;
 import edu.unisabana.tyvs.registry.domain.model.Person;
 import edu.unisabana.tyvs.registry.domain.model.RegisterResult;
 
-@Service
 public class Registry {
 
     private final RegistryRepositoryPort repo;
 
     public Registry(RegistryRepositoryPort repo) {
         this.repo = repo;
-    }
-
-    // Si tenías un constructor vacío y lo quieres conservar, puedes dejarlo,
-    // pero el IT usará SIEMPRE el constructor con puerto.
-    public Registry() {
-        this.repo = null;
     }
 
     public RegisterResult registerVoter(Person p) {
