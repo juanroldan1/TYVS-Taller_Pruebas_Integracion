@@ -1,14 +1,16 @@
 package edu.unisabana.tyvs.registry.application.usecase;
 
+import org.springframework.stereotype.Service;
+
 import edu.unisabana.tyvs.registry.application.port.out.RegistryRepositoryPort;
 import edu.unisabana.tyvs.registry.domain.model.Person;
 import edu.unisabana.tyvs.registry.domain.model.RegisterResult;
 
+@Service
 public class Registry {
 
     private final RegistryRepositoryPort repo;
 
-    // <<< ESTE es el constructor que falta >>>
     public Registry(RegistryRepositoryPort repo) {
         this.repo = repo;
     }

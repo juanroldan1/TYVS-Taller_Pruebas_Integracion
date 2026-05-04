@@ -10,7 +10,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/register")
+@RequestMapping("/api/register")
 public class RegistryController {
 
     private final Registry registry;
@@ -24,7 +24,7 @@ public class RegistryController {
     public String register(@RequestBody PersonDTO dto) {
         Person p = new Person(dto.getName(), dto.getId(), dto.getAge(),
                 Gender.valueOf(dto.getGender()), dto.isAlive());
-        RegisterResult r = registry.registerVoter(p);   
+        RegisterResult r = registry.registerVoter(p);
         return r.name();
     }
 }
